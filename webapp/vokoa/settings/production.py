@@ -13,6 +13,9 @@ DATABASES = {
     }
 
 SERVER_EMAIL = "bestel@voedselkollektief.nl"
+EMAIL_HOST = 'smtp-sender'
+EMAIL_PORT = 25
+EMAIL_USE_TLS = False
 
 ADMINS = (
     ("Voedselkollektief", os.getenv('ADMIN_EMAIL', "ict@voedselkollektief.nl")),

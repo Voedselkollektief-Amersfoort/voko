@@ -15,6 +15,9 @@ DATABASES = {
 SERVER_EMAIL = "ict@voedselkollektief.nl"
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = '/tmp/app-messages'
+EMAIL_HOST = 'smtp-sender'
+EMAIL_PORT = 25
+EMAIL_USE_TLS = False
 
 ADMINS = (
     ("Voedselkollektief", os.getenv('ADMIN_EMAIL', "ict@voedselkollektief.nl")),
