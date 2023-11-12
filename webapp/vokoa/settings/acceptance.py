@@ -12,7 +12,7 @@ DATABASES = {
         }
     }
 
-SERVER_EMAIL = "ict@voedselkollektief.nl"
+SERVER_EMAIL = "bestel@voedselkollektief.nl"
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = '/tmp/app-messages'
 EMAIL_HOST = 'smtp-sender'

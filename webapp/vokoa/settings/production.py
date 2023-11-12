@@ -5,14 +5,16 @@ SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'voko',
-        'USER': 'voko',
-        'PASSWORD': os.environ['DB_PASSWORD'],
-        'HOST': 'localhost',
+        'NAME': os.environ['POSTGRES_DB'],
+        'USER': os.environ['POSTGRES_USER'],
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'HOST': os.environ['POSTGRES_HOST'],
         }
     }
 
 SERVER_EMAIL = "bestel@voedselkollektief.nl"
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = '/tmp/app-messages'
 EMAIL_HOST = 'smtp-sender'
 EMAIL_PORT = 25
 EMAIL_USE_TLS = False
@@ -21,6 +23,10 @@ ADMINS = (
     ("Voedselkollektief", os.getenv('ADMIN_EMAIL', "ict@voedselkollektief.nl")),
 )
 
-ALLOWED_HOSTS = ("leden.voedselkollektief.nl", "acc.voedselkollektief.nl", "dev.voedselkollektief.nl", "127.0.0.1")
+ALLOWED_HOSTS = ("leden.voedselkollektief.nl", "127.0.0.1", "localhost")
 
 MOLLIE_API_KEY = os.environ["MOLLIE_API_KEY"]
+
+# RECAPTCHA Config
+RECAPTCHA_PUBLIC_KEY = os.environ["RECAPTCHA_PUBLIC_KEY"]
+RECAPTCHA_PRIVATE_KEY = os.environ["RECAPTCHA_PRIVATE_KEY"]
