@@ -12,19 +12,20 @@ DATABASES = {
         }
     }
 
-SERVER_EMAIL = "bestel@voedselkollektief.nl"
+SERVER_EMAIL = os.environ['SERVER_EMAIL']
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = '/tmp/app-messages'
-EMAIL_HOST = 'smtp-sender'
-EMAIL_PORT = 25
-EMAIL_USE_TLS = False
+EMAIL_HOST = os.environ['EMAIL_HOST']
+EMAIL_PORT = os.environ['EMAIL_PORT']
+EMAIL_USE_TLS = os.environ['EMAIL_USE_TLS']
 
 ADMINS = (
     ("Voedselkollektief", os.getenv('ADMIN_EMAIL', "ict@voedselkollektief.nl")),
 )
 
-ALLOWED_HOSTS = ("leden.voedselkollektief.nl", "127.0.0.1", "localhost")
+ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS']
 
+# BASE_URL = os.environ["VIRTUAL_HOST"]
 MOLLIE_API_KEY = os.environ["MOLLIE_API_KEY"]
 
 # RECAPTCHA Config
