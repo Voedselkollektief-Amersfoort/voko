@@ -79,7 +79,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
-    'vokoa.middleware.OrderRoundMiddleware',
+    'vokou.middleware.OrderRoundMiddleware',
     'hijack.middleware.HijackUserMiddleware',
 ]
 
@@ -93,7 +93,7 @@ CRON_CLASSES = [
     "ordering.cron.SendRideCostsRequestMails"
 ]
 
-ROOT_URLCONF = 'vokoa.urls'
+ROOT_URLCONF = 'vokou.urls'
 WSGI_APPLICATION = 'vokoa.wsgi.application'
 
 # Internationalization
@@ -122,7 +122,7 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 MOLLIE_API_KEY = "SETME"
 
 BASE_URL = "https://leden.voedselkollektief.nl"
-DEFAULT_FROM_EMAIL = "Voedselkollektief Amersfoort <bestel@voedselkollektief.nl>"
+DEFAULT_FROM_EMAIL = "Voedselkollektief Amersfoort <info@voedselkollektief.nl>"
 
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': "table,xhtmlxtras,paste,searchreplace",

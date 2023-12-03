@@ -69,7 +69,7 @@ class VokoUserFinishForm(forms.ModelForm):
 
     accept_terms_and_privacy = forms.BooleanField(
         label="Ik heb het Reglement en het Privacy Statement van "
-              "VOKO Utrecht gelezen en ga met beiden akkoord.",
+              "VOKO Amersfoort gelezen en ga met beiden akkoord.",
         required=True
     )
 

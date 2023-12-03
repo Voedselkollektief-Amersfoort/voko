@@ -114,7 +114,7 @@ class TestCreateTransaction(FinanceTestCase):
                 'currency': 'EUR',
                 'value': "{0:.2f}".format(
                     self.order.total_price_to_pay_with_balances_taken_into_account())}, # noqa
-                'description': 'VOKO Utrecht %d' % self.order.id,
+                'description': 'Voedselkollektief %d' % self.order.id,
                 'webhookUrl': settings.BASE_URL + reverse('finance.callback'),
                 'redirectUrl': (settings.BASE_URL
                                 + reverse("finance.confirmtransaction")
@@ -130,7 +130,7 @@ class TestCreateTransaction(FinanceTestCase):
             {'amount': {
                 'currency': 'EUR', 'value': "{0:.2f}".format( \
                     self.order.total_price_to_pay_with_balances_taken_into_account())}, # noqa
-                'description': 'VOKO Utrecht %d' % self.order.id,
+                'description': 'Voedselkollektief %d' % self.order.id,
                 'webhookUrl': settings.BASE_URL + reverse('finance.callback'),
                 'redirectUrl': (settings.BASE_URL
                                 + reverse("finance.confirmtransaction")
