@@ -23,7 +23,7 @@ ADMINS = (
     ("Voedselkollektief", os.getenv('ADMIN_EMAIL', "ict@voedselkollektief.nl")),
 )
 
-ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS']
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(",")
 
 # BASE_URL = os.environ["VIRTUAL_HOST"]
 MOLLIE_API_KEY = os.environ["MOLLIE_API_KEY"]
