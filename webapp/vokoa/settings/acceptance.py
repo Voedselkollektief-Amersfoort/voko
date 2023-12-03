@@ -13,7 +13,7 @@ DATABASES = {
     }
 
 SERVER_EMAIL = os.environ['SERVER_EMAIL']
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_FILE_PATH = '/tmp/app-messages'
 EMAIL_HOST = os.environ['EMAIL_HOST']
 EMAIL_PORT = os.environ['EMAIL_PORT']
