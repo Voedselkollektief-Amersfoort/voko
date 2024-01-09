@@ -13,6 +13,7 @@ DATABASES = {
         }
     }
 
+DEFAULT_FROM_EMAIL = os.environ["DEFAULT_FROM_EMAIL"]
 SERVER_EMAIL = os.environ['SERVER_EMAIL']
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_FILE_PATH = '/tmp/app-messages'
@@ -24,6 +25,7 @@ ADMINS = (
     ("Voedselkollektief", os.getenv('ADMIN_EMAIL', "ict@voedselkollektief.nl")),
 )
 
+BASE_URL = os.environ["BASE_URL"]
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(",")
 
 # BASE_URL = os.environ["VIRTUAL_HOST"]
