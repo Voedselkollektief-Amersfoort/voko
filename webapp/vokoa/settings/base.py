@@ -30,6 +30,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
+                'ordering.context_processors.pickup_locations'
             ],
         },
     },
@@ -93,6 +94,8 @@ CRON_CLASSES = [
     "ordering.cron.SendDistributionMails",
     "ordering.cron.SendRideCostsRequestMails"
 ]
+
+DJANGO_CRON_DELETE_LOGS_OLDER_THAN = 365
 
 ROOT_URLCONF = 'vokou.urls'
 WSGI_APPLICATION = 'vokoa.wsgi.application'
@@ -170,8 +173,9 @@ CONSTANCE_CONFIG = {
     'PROMO_GROUP': (7, "Promotion Group", int),
     'FINANCE_GROUP': (9, "Finance Group", int),
     # other config values
-    'MARKUP_PERCENTAGE': (4.0, "Markup percentage", float)
-
+    'MARKUP_PERCENTAGE': (4.0, "Markup percentage", float),
+    'UNSUBSCRIBE_FORM_URL': ("", "Unsubscribe form URL", str)
+    
 }
 
 CONSTANCE_CONFIG_FIELDSETS = {
@@ -195,7 +199,7 @@ CONSTANCE_CONFIG_FIELDSETS = {
             'IT_GROUP',
             'PROMO_GROUP',
             'FINANCE_GROUP'),
-        'Other options': ('MARKUP_PERCENTAGE',)
+        'Other options': ('MARKUP_PERCENTAGE','UNSUBSCRIBE_FORM_URL')
     }    
 
 
